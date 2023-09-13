@@ -8,17 +8,6 @@ import (
 	"time"
 )
 
-func GetUserByUpdate(username string, password string) error {
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
-
-	var userResult bson.M
-	if err := database.Db.FindOne(ctx, bson.M{"username": username, "password": password}).Decode(&userResult); err != nil {
-		return err
-	}
-	return nil
-}
-
 func GetUserByName(username string) error {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
