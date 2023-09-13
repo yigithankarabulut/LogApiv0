@@ -12,7 +12,7 @@ func JwtCreate(str string, c *fiber.Ctx) (error, string) {
 	var env []byte = []byte(os.Getenv("SECRET_KEY"))
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"Name":      str,
-		"ExpiresAt": time.Now().Add(time.Second * 15).Unix(),
+		"ExpiresAt": time.Now().Add(time.Hour * 6).Unix(),
 	})
 	tokenString, err := token.SignedString(env)
 	if err != nil {
