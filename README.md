@@ -34,6 +34,13 @@ To start the project, follow these steps:
 
 ## Usage
 This application provides a RESTful API for log management and user management. Below are explanations of API endpoints and how to use them:
+```http
+POST    /admin     "{ Register User }"
+POST    /login     "{ Login User }"
+POST    /log       "{ Create Log File }"
+PUT     /register  "{ Update Password User }"
+DELETE  /admin     "{ Delete User }"
+```
 
 Admin Registration (Register)
 HTTP Method: POST
